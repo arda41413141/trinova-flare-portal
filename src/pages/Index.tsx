@@ -1,6 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
+import AboutUs from "@/components/AboutUs";
 
 const Index = () => {
   return (
@@ -28,6 +28,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* About Us Section */}
+        <AboutUs />
 
         {/* Features Section */}
         <section className="py-20 bg-black/40">

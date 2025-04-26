@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import AboutUs from "@/components/AboutUs";
+import GameModes from "@/components/GameModes";
 
 const Index = () => {
   return (
@@ -42,6 +43,9 @@ const Index = () => {
 
         {/* About Us Section */}
         <AboutUs />
+
+        {/* Game Modes Section */}
+        <GameModes />
 
         {/* Features Section */}
         <section className="py-20 bg-black/40">

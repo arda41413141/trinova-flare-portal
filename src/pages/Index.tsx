@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import AboutUs from "@/components/AboutUs";
@@ -10,19 +11,29 @@ const Index = () => {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-black/60 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-purple-900/40 z-10" />
+          <img 
+            src="/lovable-uploads/53713856-b5d6-425f-ad4e-81579dbf2b5f.png"
+            alt="Trinova Studios Background"
+            className="absolute w-full h-full object-cover opacity-20"
+          />
           <div className="container relative z-20 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+            <img 
+              src="/lovable-uploads/53713856-b5d6-425f-ad4e-81579dbf2b5f.png"
+              alt="Trinova Studios Logo"
+              className="w-48 h-48 mx-auto mb-8"
+            />
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
               Trinova Studios
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-purple-200/80 mb-8 max-w-2xl mx-auto">
               Minecraft dünyasının en iyi sunucusuna hoş geldiniz
             </p>
             <div className="flex justify-center gap-4">
               <Button className="trinova-gradient text-lg px-8 py-6">
                 Şimdi Oyna
               </Button>
-              <Button variant="outline" className="text-lg px-8 py-6">
+              <Button variant="outline" className="text-lg px-8 py-6 border-purple-500/50 hover:bg-purple-500/10">
                 Mağazayı Keşfet
               </Button>
             </div>
@@ -60,7 +71,7 @@ const Index = () => {
       </main>
 
       <footer className="glass-panel py-8">
-        <div className="container text-center text-white/60">
+        <div className="container text-center text-purple-200/60">
           <p>© 2025 Trinova Studios. Tüm hakları saklıdır.</p>
         </div>
       </footer>

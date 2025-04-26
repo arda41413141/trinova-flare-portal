@@ -5,33 +5,33 @@
  
 @layer base {
   :root {
-    --background: 0 0% 6%;
+    --background: 267 33% 3%;
     --foreground: 0 0% 100%;
     
-    --card: 0 0% 13%;
+    --card: 267 33% 13%;
     --card-foreground: 0 0% 100%;
     
-    --popover: 0 0% 13%;
+    --popover: 267 33% 13%;
     --popover-foreground: 0 0% 100%;
     
-    --primary: 142 76% 36%;
+    --primary: 267 76% 36%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 0 0% 13%;
+    --secondary: 267 33% 13%;
     --secondary-foreground: 0 0% 100%;
     
-    --muted: 0 0% 20%;
+    --muted: 267 33% 20%;
     --muted-foreground: 0 0% 80%;
     
-    --accent: 142 76% 36%;
+    --accent: 267 76% 36%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 142 76% 36%;
+    --border: 267 33% 20%;
+    --input: 267 33% 20%;
+    --ring: 267 76% 36%;
     
     --radius: 0.5rem;
   }
@@ -48,13 +48,18 @@
 }
 
 .glass-panel {
-  @apply bg-black/40 backdrop-blur-sm border border-white/10;
+  @apply bg-black/40 backdrop-blur-sm border border-purple-500/10;
 }
 
 .nav-link {
-  @apply text-white/70 hover:text-white transition-colors;
+  @apply text-white/70 hover:text-purple-400 transition-colors;
 }
 
 .trinova-gradient {
-  @apply bg-gradient-to-r from-green-600 to-green-700;
+  @apply bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800;
 }
+
+.text-gradient {
+  @apply bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent;
+}
+

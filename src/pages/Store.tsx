@@ -49,17 +49,17 @@ const Store = () => {
           {cosmetics.map((item, index) => (
             <Card key={index} className="p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Package2 className="h-8 w-8 text-green-500" />
+                <Package2 className="h-8 w-8 text-purple-500" />
                 <div>
                   <h2 className="text-2xl font-bold">{item.name}</h2>
-                  <p className="text-sm text-muted-foreground">{item.category}</p>
+                  <p className="text-sm text-purple-400/70">{item.category}</p>
                 </div>
               </div>
               <p className="mb-4">{item.description}</p>
               <div className="flex items-center justify-between">
                 <p className="text-2xl font-semibold">{item.price}₺</p>
-                <Button>
-                  <Star className="mr-2 h-5 w-5" />
+                <Button className="trinova-gradient">
+                  <Star className="mr-2 h-5 w-5 text-white" />
                   Satın Al
                 </Button>
               </div>
@@ -69,7 +69,7 @@ const Store = () => {
       </main>
 
       <footer className="glass-panel py-8">
-        <div className="container text-center text-white/60">
+        <div className="container text-center text-purple-200/60">
           <p>© 2025 Trinova Studios. Tüm hakları saklıdır.</p>
         </div>
       </footer>

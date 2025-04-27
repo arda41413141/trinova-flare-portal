@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { MessageCircle, Users, FileText, ShieldAlert } from "lucide-react";
 
 interface GameModeItemProps {
   title: string;
@@ -61,17 +62,26 @@ interface CommunityLinkProps {
 }
 
 const CommunityLink = ({ icon, title, description, href, external = false }: CommunityLinkProps) => {
-  const Component = external ? 'a' : Link;
-  const props = external ? { href, target: "_blank" } : { to: href };
-
+  if (external) {
+    return (
+      <a href={href} target="_blank" className="block p-2 hover:bg-purple-500/10 rounded-md">
+        <div className="font-medium text-purple-300 flex items-center">
+          {icon}
+          {title}
+        </div>
+        <div className="text-sm text-purple-300/70">{description}</div>
+      </a>
+    );
+  }
+  
   return (
-    <Component {...props} className="block p-2 hover:bg-purple-500/10 rounded-md">
+    <Link to={href} className="block p-2 hover:bg-purple-500/10 rounded-md">
       <div className="font-medium text-purple-300 flex items-center">
         {icon}
         {title}
       </div>
       <div className="text-sm text-purple-300/70">{description}</div>
-    </Component>
+    </Link>
   );
 };
 
@@ -88,6 +98,7 @@ export const CommunityContent = () => (
     </li>
     <li>
       <CommunityLink
+        icon={<FileText className="h-4 w-4 mr-2" />}
         title="Destek"
         description="Yardım ve destek"
         href="/support"
@@ -95,6 +106,7 @@ export const CommunityContent = () => (
     </li>
     <li>
       <CommunityLink
+        icon={<Users className="h-4 w-4 mr-2" />}
         title="Forum"
         description="Topluluk forumu"
         href="/forum"
@@ -102,6 +114,7 @@ export const CommunityContent = () => (
     </li>
     <li>
       <CommunityLink
+        icon={<ShieldAlert className="h-4 w-4 mr-2" />}
         title="Kurallar"
         description="Sunucu kuralları"
         href="/rules"

@@ -12,6 +12,8 @@ import Rules from "./pages/Rules";
 import Forum from "./pages/Forum";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/forum" element={<Forum />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -53,9 +53,11 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
           </a>
         </div>
         
-        <Button className="trinova-gradient w-full">
-          <LogIn className="mr-2 h-5 w-5" />
-          Giriş Yap
+        <Button className="trinova-gradient w-full" asChild>
+          <Link to="/login">
+            <LogIn className="mr-2 h-5 w-5" />
+            Giriş Yap
+          </Link>
         </Button>
       </nav>
     </div>

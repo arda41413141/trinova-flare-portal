@@ -49,9 +49,11 @@ const Header = () => {
               <User className="h-5 w-5 text-purple-300" />
             </Link>
           </Button>
-          <Button className="trinova-gradient">
-            <LogIn className="mr-2 h-5 w-5" />
-            Giriş Yap
+          <Button className="trinova-gradient" asChild>
+            <Link to="/login">
+              <LogIn className="mr-2 h-5 w-5" />
+              Giriş Yap
+            </Link>
           </Button>
         </div>
         

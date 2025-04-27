@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, User, LogIn, Menu, ChevronDown, Discord, Twitter, Instagram } from "lucide-react";
+import { ShoppingCart, User, LogIn, Menu, ChevronDown, MessageCircle, Twitter, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { 
   NavigationMenu,
@@ -103,7 +103,7 @@ const Header = () => {
                     <li>
                       <a href="https://discord.com" target="_blank" className="block p-2 hover:bg-purple-500/10 rounded-md">
                         <div className="font-medium text-purple-300 flex items-center">
-                          <Discord className="h-4 w-4 mr-2" /> Discord
+                          <MessageCircle className="h-4 w-4 mr-2" /> Discord
                         </div>
                         <div className="text-sm text-purple-300/70">Topluluğumuza katıl</div>
                       </a>
@@ -136,7 +136,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-4">
           <div className="flex items-center gap-2">
             <a href="https://discord.com" target="_blank" className="p-2 hover:bg-purple-500/10 rounded-full transition-colors">
-              <Discord className="h-5 w-5 text-purple-300" />
+              <MessageCircle className="h-5 w-5 text-purple-300" />
             </a>
             <a href="https://twitter.com" target="_blank" className="p-2 hover:bg-purple-500/10 rounded-full transition-colors">
               <Twitter className="h-5 w-5 text-purple-300" />
@@ -193,7 +193,7 @@ const Header = () => {
           
           <div className="flex items-center gap-2 pt-2">
             <a href="https://discord.com" target="_blank" className="p-2 hover:bg-purple-500/10 rounded-full transition-colors">
-              <Discord className="h-5 w-5 text-purple-300" />
+              <MessageCircle className="h-5 w-5 text-purple-300" />
             </a>
             <a href="https://twitter.com" target="_blank" className="p-2 hover:bg-purple-500/10 rounded-full transition-colors">
               <Twitter className="h-5 w-5 text-purple-300" />

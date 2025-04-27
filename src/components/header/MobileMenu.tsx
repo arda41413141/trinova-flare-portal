@@ -1,7 +1,6 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Twitter, Instagram, LogIn } from "lucide-react";
+import { MessageCircle, Twitter, Instagram, LogIn, ShoppingCart, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
@@ -30,6 +29,17 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
         <Link to="/support" className="text-white/70 hover:text-purple-400 p-2 hover:bg-purple-500/10 rounded-md">
           Destek
         </Link>
+        
+        <div className="flex items-center gap-2">
+          <Link to="/cart" className="p-2 hover:bg-purple-500/10 rounded-md text-white/70 hover:text-purple-400">
+            <ShoppingCart className="h-5 w-5" />
+            <span className="ml-2">Sepetim</span>
+          </Link>
+          <Link to="/profile" className="p-2 hover:bg-purple-500/10 rounded-md text-white/70 hover:text-purple-400">
+            <User className="h-5 w-5" />
+            <span className="ml-2">Profilim</span>
+          </Link>
+        </div>
         
         <div className="flex items-center gap-2 pt-2">
           <a href="https://discord.com" target="_blank" className="p-2 hover:bg-purple-500/10 rounded-full transition-colors">

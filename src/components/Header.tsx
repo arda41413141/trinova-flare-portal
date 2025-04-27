@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, User, LogIn, Menu, MessageCircle, Twitter, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -40,11 +39,15 @@ const Header = () => {
             </a>
           </div>
           
-          <Button variant="ghost" size="icon" className="hover:bg-purple-500/10">
-            <ShoppingCart className="h-5 w-5 text-purple-300" />
+          <Button variant="ghost" size="icon" className="hover:bg-purple-500/10" asChild>
+            <Link to="/cart">
+              <ShoppingCart className="h-5 w-5 text-purple-300" />
+            </Link>
           </Button>
-          <Button variant="ghost" size="icon" className="hover:bg-purple-500/10">
-            <User className="h-5 w-5 text-purple-300" />
+          <Button variant="ghost" size="icon" className="hover:bg-purple-500/10" asChild>
+            <Link to="/profile">
+              <User className="h-5 w-5 text-purple-300" />
+            </Link>
           </Button>
           <Button className="trinova-gradient">
             <LogIn className="mr-2 h-5 w-5" />

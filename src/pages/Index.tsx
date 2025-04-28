@@ -1,8 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import AboutUs from "@/components/AboutUs";
 import GameModes from "@/components/GameModes";
+import FoundersSection from "@/components/FoundersSection";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -34,8 +35,8 @@ const Index = () => {
               <Button className="trinova-gradient text-lg px-8 py-6">
                 Şimdi Oyna
               </Button>
-              <Button variant="outline" className="text-lg px-8 py-6 border-purple-500/50 hover:bg-purple-500/10">
-                Mağazayı Keşfet
+              <Button variant="outline" className="text-lg px-8 py-6 border-purple-500/50 hover:bg-purple-500/10" asChild>
+                <Link to="/store">Mağazayı Keşfet</Link>
               </Button>
             </div>
           </div>
@@ -46,6 +47,9 @@ const Index = () => {
 
         {/* Game Modes Section */}
         <GameModes />
+
+        {/* Founders Section */}
+        <FoundersSection />
 
         {/* Features Section */}
         <section className="py-20 bg-black/40">

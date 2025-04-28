@@ -2,8 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
+import { useToast } from "@/hooks/use-toast";
 
 const VIP = () => {
+  const { toast } = useToast();
+
   const vipPackages = [
     {
       name: "VIP",
@@ -61,6 +64,20 @@ const VIP = () => {
     }
   ];
 
+  const addToCart = (pkg: any) => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart.push({
+      ...pkg,
+      id: Date.now(),
+      type: "vip"
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    toast({
+      title: "VIP paketi sepete eklendi",
+      description: `${pkg.name} paketi başarıyla sepete eklendi.`,
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -81,7 +98,7 @@ const VIP = () => {
                   </li>
                 ))}
               </ul>
-              <Button className="w-full">Satın Al</Button>
+              <Button className="w-full" onClick={() => addToCart(pkg)}>Sepete Ekle</Button>
             </Card>
           ))}
         </div>

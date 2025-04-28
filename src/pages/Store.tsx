@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -7,9 +6,11 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Header from "@/components/Header";
 import { Package2, Star, Shield, Sword, Crown, Heart, Users } from "lucide-react";
 import { Toggle } from "@/components/ui/toggle";
+import { useToast } from "@/hooks/use-toast";
 
 const Store = () => {
   const [filter, setFilter] = useState<string>("all");
+  const { toast } = useToast();
   
   const cosmetics = [
     {
@@ -62,6 +63,20 @@ const Store = () => {
     }
   ];
 
+  const addToCart = (item: any) => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart.push({
+      ...item,
+      id: Date.now(),
+      type: "cosmetic"
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    toast({
+      title: "Ürün sepete eklendi",
+      description: `${item.name} başarıyla sepete eklendi.`,
+    });
+  };
+
   const filteredCosmetics = filter === "all" 
     ? cosmetics 
     : cosmetics.filter(item => item.category === filter);
@@ -79,7 +94,6 @@ const Store = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Filters */}
           <div className="glass-panel p-6 rounded-xl">
             <h2 className="text-xl font-bold text-purple-300 mb-4">Filtreler</h2>
             
@@ -123,7 +137,6 @@ const Store = () => {
             </div>
           </div>
           
-          {/* Products */}
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredCosmetics.map((item, index) => (
               <Card key={index} className="glass-panel border-purple-500/20 overflow-hidden">
@@ -145,9 +158,9 @@ const Store = () => {
                   
                   <div className="flex items-center justify-between">
                     <p className="text-2xl font-semibold text-purple-100">{item.price}₺</p>
-                    <Button className="trinova-gradient">
+                    <Button className="trinova-gradient" onClick={() => addToCart(item)}>
                       <Star className="mr-2 h-4 w-4 text-white" />
-                      Satın Al
+                      Sepete Ekle
                     </Button>
                   </div>
                 </div>
